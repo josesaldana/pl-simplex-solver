@@ -3,7 +3,7 @@ import java.util.*;
 public class PLProblem {
     private int amountOfVariables;
     private List<PLRestriction> restrictions;
-    private PLFuncionObjetivo funcionObjetivo;
+    private PLObjectiveFunction objectiveFunction;
 
     public PLProblem(int amountOfVariables) {
         this.amountOfVariables = amountOfVariables;
@@ -22,18 +22,18 @@ public class PLProblem {
         return this.restrictions;
     }
 
-    public PLFuncionObjetivo getFuncionObjetivo() {
-        return funcionObjetivo;
+    public PLObjectiveFunction getObjectiveFunction() {
+        return objectiveFunction;
     }
 
-    public void setFuncionObjetivo(PLFuncionObjetivo funcionObjetivo) {
-        this.funcionObjetivo = funcionObjetivo;
+    public void setObjectiveFunction(PLObjectiveFunction objectiveFunction) {
+        this.objectiveFunction = objectiveFunction;
     }
 
     public PLSimpleXTable getSimpleXTable() {
         PLSimpleXTable table = new PLSimpleXTable();
 
-        table.addItem(PLSimpleXTableItem.fromFuncionObjetivo(this.funcionObjetivo));
+        table.addItem(PLSimpleXTableItem.fromObjectiveFunction(this.objectiveFunction));
 
         for(PLRestriction restriction : this.restrictions) {
             table.addItem(PLSimpleXTableItem.fromRestriction(restriction));

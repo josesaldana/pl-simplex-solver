@@ -9,6 +9,7 @@ public class Console {
 
     public static String readLine() throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        return bf.readLine();
+        String line = bf.readLine();
+        return line;
     }
 }
